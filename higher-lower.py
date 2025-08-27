@@ -114,10 +114,12 @@ print("6. Try to get the highest streak possible! 💪")
 
 continue_game = True
 score = 0
-
+first_country = random.choice(countries_area)
+countries_area.remove(first_country)
+second_country = random.choice(countries_area)
+countries_area.remove(second_country)
 while(continue_game):
-    first_country = random.choice(countries_area)
-    countries_area.remove(first_country)
+    first_country = second_country
     second_country = random.choice(countries_area)
     countries_area.remove(second_country)
     print("")
