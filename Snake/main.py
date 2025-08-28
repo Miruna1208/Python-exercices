@@ -10,7 +10,6 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.tracer(0)
 
-
 snake = Snake()
 food = Food()
 score = Score()
@@ -32,13 +31,18 @@ while game_is_on:
         food.refresh()
 
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        score.game_over()
-        game_is_on = False
+        score.reset()
+        snake.reset()
 
     for seg in snake.segments:
         if snake.head.distance(seg) < 10 and seg != snake.head:
-            game_is_on = False
-            score.game_over()
+            score.reset()
+            snake.reset()
+    with open("high_score.txt", mode="w") as file:
+        file.write(str(score.high_score))
+
+
+
 
         
 
