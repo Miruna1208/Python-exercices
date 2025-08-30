@@ -1,14 +1,14 @@
 import pandas
 import turtle 
 
-data = pandas.read_csv("C:/Users/mirun/Documents/Learning/Python-exercices/Countries_game/50_states.csv")
+data = pandas.read_csv("C:/Users/mirun/Documents/Learning/Python-exercices/States_game/50_states.csv")
 states = data.state.to_list()
 guessed_states = []
 
 screen = turtle.Screen()
 screen.setup(width=700, height=500)
 screen.title("U.S Game")
-image = "C:/Users/mirun/Documents/Learning/Python-exercices/Countries_game/blank_states_img.gif"
+image = "C:/Users/mirun/Documents/Learning/Python-exercices/States_game/blank_states_img.gif"
 screen.addshape(image)
 turtle.shape(image)
 
