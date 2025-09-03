@@ -15,6 +15,7 @@ stock_params = {
     "apikey": STOCK_API_KEY
 }
 response = requests.get(stock_endpoint, params=stock_params)
+print(response.json())
 data = response.json()["Time Series (Daily)"]
 data_list = [value for (key, value) in data.items()]
 yesterday_data = data_list[0]
